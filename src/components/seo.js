@@ -2,6 +2,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
+import favicon16 from "../images/logo-16.png";
+import favicon32 from "../images/logo-32.png";
+import favicon64 from "../images/logo-64.png";
 
 function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(graphql`
@@ -23,6 +26,11 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{
         lang
       }}
+      link={[
+        { rel: `icon`, type: `image/png`, sizes: `16x16`, href: `${favicon16}` },
+        { rel: `icon`, type: `image/png`, sizes: `32x32`, href: `${favicon32}` },
+        { rel: `shortcut icon`, type: `image/png`, href: `${favicon64}` },
+      ]}
       meta={[
         {
           name: `description`,
@@ -67,7 +75,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
         .concat(meta)}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${site.siteMetadata.title}`}
     />
   );
 }

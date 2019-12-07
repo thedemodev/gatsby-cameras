@@ -1,3 +1,19 @@
 @tailwind base;
+
 @tailwind components;
+
+@font-face {
+    font-family: "roboto_slabregular";
+    src: url("RobotoSlab-Regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "copperplate_gothic";
+    src: url("CopperplateGothic-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: bold;
+}
+
 @tailwind utilities;
